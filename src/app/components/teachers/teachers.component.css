@@ -1,0 +1,22 @@
+table, td, th {  
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 35%;
+    margin-left: 35%;
+    }
+  
+  th, td {
+    padding: 15px;
+  }
+
+  .itemBtnSave {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 30%;
+
+  }

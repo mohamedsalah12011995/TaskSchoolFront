@@ -1,0 +1,50 @@
+<h2>This my task !</h2>
+<p>This my task powerd by mohamed salah</p>
+
+
+
+<div style="width: 50%;margin-left: 20%;">
+
+	<div class="col-md-5 itemBtnSave">
+		<button mat-raised-button  [hidden]="!isnew" (click)="insertOrUpdate()">حفظ <i class="btnSave far fa-save"></i></button>
+		<button mat-raised-button 	(click)="insertOrUpdate()" style="margin-left: 10px;margin-right: 10px;"  
+									[hidden]="isnew">تعديل <i class="btnAdd far fa-edit"></i></button>
+		<button mat-raised-button (click)="clear()">جديد <i class="btnRemove material-icons">replay</i></button>
+  </div>
+  
+  <br>
+  <div class="alert alert-success" role="alert" style="text-align: center;" *ngIf="isSuccess==true">
+    has been successfuly Teacher
+  </div>
+	
+	<mat-form-field appearance="outline" style="display: inline-block;
+												position: relative;
+												text-align: right;
+												margin-left: 35%;
+                        margin-top: 20px;
+                        width: 35%;">
+		<mat-label>الإسم</mat-label>
+		<input matInput [(ngModel)]="teacher.name">
+		</mat-form-field>
+
+<table>
+  <tr>
+    <th>#</th>
+    <th>name</th>
+    <th><span class="material-icons">delete</span></th>
+
+  </tr>
+  <tr *ngFor="let teach of teacherList; let i =index">
+    <th>{{i+1}}</th>
+    <td>{{teach.name}}</td>
+    <td (click)="removeRow(teach.id)"> 
+      <span class="material-icons">
+        delete
+        </span>
+    </td>
+
+  </tr>
+
+
+</table>
+</div>
